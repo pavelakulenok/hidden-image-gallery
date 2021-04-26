@@ -8,9 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var customView = UIView()
-    var infoView = UIView()
-    var isInfoShown = false
+    private var customView = UIView()
+    private var infoView = UIView()
+    private var isInfoShown = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
