@@ -13,6 +13,12 @@
 		D419D9832635C4C200022FBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D419D9812635C4C200022FBA /* Main.storyboard */; };
 		D419D9852635C4C300022FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D419D9842635C4C300022FBA /* Assets.xcassets */; };
 		D419D9882635C4C300022FBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D419D9862635C4C300022FBA /* LaunchScreen.storyboard */; };
+		D45D3195263DE73500F7B08A /* ShowAddedPicturesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45D3194263DE73500F7B08A /* ShowAddedPicturesVC.swift */; };
+		D45D3197263DE74900F7B08A /* ShowAddedPicturesVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45D3196263DE74900F7B08A /* ShowAddedPicturesVC.storyboard */; };
+		D45D3199263DEAB000F7B08A /* UIViewController+StoryboardInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45D3198263DEAB000F7B08A /* UIViewController+StoryboardInit.swift */; };
+		D45D319B263DEBDB00F7B08A /* PasswordVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45D319A263DEBDB00F7B08A /* PasswordVerificationVC.swift */; };
+		D45D319D263DEBF300F7B08A /* PasswordVerificationVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45D319C263DEBF300F7B08A /* PasswordVerificationVC.storyboard */; };
+		D45D319F263DF07600F7B08A /* UIViewController+UIAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45D319E263DF07600F7B08A /* UIViewController+UIAlertVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		D419D9842635C4C300022FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D419D9872635C4C300022FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D419D9892635C4C300022FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D45D3194263DE73500F7B08A /* ShowAddedPicturesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAddedPicturesVC.swift; sourceTree = "<group>"; };
+		D45D3196263DE74900F7B08A /* ShowAddedPicturesVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowAddedPicturesVC.storyboard; sourceTree = "<group>"; };
+		D45D3198263DEAB000F7B08A /* UIViewController+StoryboardInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardInit.swift"; sourceTree = "<group>"; };
+		D45D319A263DEBDB00F7B08A /* PasswordVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVerificationVC.swift; sourceTree = "<group>"; };
+		D45D319C263DEBF300F7B08A /* PasswordVerificationVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordVerificationVC.storyboard; sourceTree = "<group>"; };
+		D45D319E263DF07600F7B08A /* UIViewController+UIAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIAlertVC.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +69,15 @@
 			isa = PBXGroup;
 			children = (
 				D419D97B2635C4C200022FBA /* AppDelegate.swift */,
+				D45D3198263DEAB000F7B08A /* UIViewController+StoryboardInit.swift */,
+				D45D319E263DF07600F7B08A /* UIViewController+UIAlertVC.swift */,
 				D419D97D2635C4C200022FBA /* SceneDelegate.swift */,
 				D419D97F2635C4C200022FBA /* ViewController.swift */,
+				D45D3194263DE73500F7B08A /* ShowAddedPicturesVC.swift */,
+				D45D319A263DEBDB00F7B08A /* PasswordVerificationVC.swift */,
+				D45D319C263DEBF300F7B08A /* PasswordVerificationVC.storyboard */,
 				D419D9812635C4C200022FBA /* Main.storyboard */,
+				D45D3196263DE74900F7B08A /* ShowAddedPicturesVC.storyboard */,
 				D419D9842635C4C300022FBA /* Assets.xcassets */,
 				D419D9862635C4C300022FBA /* LaunchScreen.storyboard */,
 				D419D9892635C4C300022FBA /* Info.plist */,
@@ -125,8 +143,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D45D3197263DE74900F7B08A /* ShowAddedPicturesVC.storyboard in Resources */,
 				D419D9882635C4C300022FBA /* LaunchScreen.storyboard in Resources */,
 				D419D9852635C4C300022FBA /* Assets.xcassets in Resources */,
+				D45D319D263DEBF300F7B08A /* PasswordVerificationVC.storyboard in Resources */,
 				D419D9832635C4C200022FBA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,7 +180,11 @@
 			files = (
 				D419D9802635C4C200022FBA /* ViewController.swift in Sources */,
 				D419D97C2635C4C200022FBA /* AppDelegate.swift in Sources */,
+				D45D319B263DEBDB00F7B08A /* PasswordVerificationVC.swift in Sources */,
+				D45D319F263DF07600F7B08A /* UIViewController+UIAlertVC.swift in Sources */,
 				D419D97E2635C4C200022FBA /* SceneDelegate.swift in Sources */,
+				D45D3195263DE73500F7B08A /* ShowAddedPicturesVC.swift in Sources */,
+				D45D3199263DEAB000F7B08A /* UIViewController+StoryboardInit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

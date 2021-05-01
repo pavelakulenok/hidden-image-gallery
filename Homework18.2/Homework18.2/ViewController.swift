@@ -23,6 +23,12 @@ class ViewController: UIViewController {
         displayImagePickerController()
     }
 
+    @IBAction private func onShowAddedPhotosButton(_ sender: Any) {
+        let viewController = PasswordVerificationVC.instantiate()
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true, completion: nil)
+    }
+
     private func displayImagePickerController() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
