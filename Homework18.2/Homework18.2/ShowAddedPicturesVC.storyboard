@@ -15,13 +15,77 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NgF-9k-Suv">
+                                <rect key="frame" x="20" y="109" width="374" height="350"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="aZc-fq-yDR"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abb-8t-iii">
+                                <rect key="frame" x="100" y="613" width="34" height="30"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <action selector="onBack:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IQB-gd-bm2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oru-zr-yWc">
+                                <rect key="frame" x="284" y="613" width="30" height="30"/>
+                                <state key="normal" title="next"/>
+                                <connections>
+                                    <action selector="onNext:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="brP-o8-owK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v92-wF-rqZ">
+                                <rect key="frame" x="20" y="64" width="374" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="dVU-UR-Jof"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="leave your comment" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ans-ix-qxz">
+                                <rect key="frame" x="20" y="479" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brm-PM-vfI">
+                                <rect key="frame" x="159.5" y="533" width="95" height="30"/>
+                                <state key="normal" title="add comment"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ans-ix-qxz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="2Mt-rQ-6HN"/>
+                            <constraint firstItem="brm-PM-vfI" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="9vm-6h-pM6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="v92-wF-rqZ" secondAttribute="trailing" constant="20" id="Lkt-NQ-SBg"/>
+                            <constraint firstItem="ans-ix-qxz" firstAttribute="top" secondItem="NgF-9k-Suv" secondAttribute="bottom" constant="20" id="PYH-YF-Gue"/>
+                            <constraint firstItem="NgF-9k-Suv" firstAttribute="top" secondItem="v92-wF-rqZ" secondAttribute="bottom" constant="20" id="Pim-hp-Y7V"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NgF-9k-Suv" secondAttribute="trailing" constant="20" id="QmB-Jr-vqu"/>
+                            <constraint firstItem="oru-zr-yWc" firstAttribute="top" secondItem="ans-ix-qxz" secondAttribute="bottom" constant="100" id="SAQ-D2-zF5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oru-zr-yWc" secondAttribute="trailing" constant="100" id="WF4-g0-9b8"/>
+                            <constraint firstItem="brm-PM-vfI" firstAttribute="top" secondItem="ans-ix-qxz" secondAttribute="bottom" constant="20" id="cU1-m5-8jF"/>
+                            <constraint firstItem="v92-wF-rqZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="h0f-3X-VMt"/>
+                            <constraint firstItem="Abb-8t-iii" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="100" id="jR2-Z3-x9s"/>
+                            <constraint firstItem="v92-wF-rqZ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="nVL-14-0Xb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ans-ix-qxz" secondAttribute="trailing" constant="20" id="o58-2R-aoK"/>
+                            <constraint firstItem="ans-ix-qxz" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="qjO-DW-zKg"/>
+                            <constraint firstItem="Abb-8t-iii" firstAttribute="top" secondItem="ans-ix-qxz" secondAttribute="bottom" constant="100" id="s1E-B9-MPj"/>
+                            <constraint firstItem="NgF-9k-Suv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="s4Y-va-pOi"/>
+                            <constraint firstItem="NgF-9k-Suv" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="x0H-7v-asN"/>
+                            <constraint firstItem="v92-wF-rqZ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="yNp-45-WYR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="NgF-9k-Suv" id="eQm-zN-2bc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="88"/>
+            <point key="canvasLocation" x="-55" y="31"/>
         </scene>
     </scenes>
     <resources>

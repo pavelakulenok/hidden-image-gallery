@@ -8,7 +8,7 @@
 import UIKit
 
 class PasswordVerificationVC: UIViewController {
-    let password = "123"
+    private let password = "123"
 
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var goButton: UIButton!
