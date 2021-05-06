@@ -8,20 +8,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Homework18_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainScreenViewController" customModule="Homework18_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReF-QJ-31J">
-                                <rect key="frame" x="152" y="344" width="110" height="50"/>
+                                <rect key="frame" x="150" y="323" width="114" height="50"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="Ywx-wF-WKO"/>
-                                    <constraint firstAttribute="height" constant="50" id="bCj-Sm-Kcf"/>
+                                    <constraint firstAttribute="height" constant="50" id="Cx4-aV-3jy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Add Photo">
@@ -32,11 +31,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qlq-f9-Dop">
-                                <rect key="frame" x="107" y="444" width="200" height="50"/>
+                                <rect key="frame" x="100" y="423" width="214" height="50"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="adJ-AW-m9x"/>
-                                    <constraint firstAttribute="width" constant="200" id="udS-WA-qSQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="pD1-4p-3rF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Show added photos">
@@ -50,10 +48,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ReF-QJ-31J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BBH-bc-1bc"/>
-                            <constraint firstItem="Qlq-f9-Dop" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mby-fz-lbb"/>
-                            <constraint firstItem="Qlq-f9-Dop" firstAttribute="top" secondItem="ReF-QJ-31J" secondAttribute="bottom" constant="50" id="j0J-0S-4sK"/>
-                            <constraint firstItem="ReF-QJ-31J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="voN-VV-F0t"/>
+                            <constraint firstItem="Qlq-f9-Dop" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="5Kd-k5-5SP"/>
+                            <constraint firstItem="Qlq-f9-Dop" firstAttribute="top" secondItem="ReF-QJ-31J" secondAttribute="bottom" constant="50" id="Blx-k3-aGL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ReF-QJ-31J" secondAttribute="trailing" constant="150" id="JfM-To-WYX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qlq-f9-Dop" secondAttribute="trailing" constant="100" id="LM4-5O-Xdx"/>
+                            <constraint firstItem="ReF-QJ-31J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="dkO-cZ-O4g"/>
+                            <constraint firstItem="Qlq-f9-Dop" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="o0m-yw-tuA"/>
                         </constraints>
                     </view>
                     <connections>
@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-81" y="29"/>
+            <point key="canvasLocation" x="183" y="-62"/>
         </scene>
     </scenes>
     <resources>

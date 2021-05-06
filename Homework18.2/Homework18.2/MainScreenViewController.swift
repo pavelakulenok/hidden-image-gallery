@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainScreenViewController: UIViewController {
     private var imagesFolderPath: URL?
 
     @IBOutlet weak var addPhotoButton: UIButton!
@@ -15,8 +15,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addPhotoButton.layer.cornerRadius = 20
-        showPhotosButton.layer.cornerRadius = 20
+        addPhotoButton.layer.cornerRadius = 10
+        showPhotosButton.layer.cornerRadius = 10
         imagesFolderPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     }
 
@@ -25,9 +25,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction private func onShowAddedPhotosButton(_ sender: Any) {
-        let viewController = PasswordVerificationVC.instantiate()
-        viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true, completion: nil)
+        guard let path = imagesFolderPath?.path else {
+            return
+        }
+        let imagesNameArray = try? FileManager.default.contentsOfDirectory(atPath: path)
+        if let array = imagesNameArray {
+            if array.isEmpty {
+                showAlertWithOneButton(title: "No images to show", message: "Add images", actionTitle: "OK", actionStyle: .default, handler: nil)
+            } else {
+                let viewController = PasswordVerificationVC.instantiate()
+                viewController.modalPresentationStyle = .fullScreen
+                present(viewController, animated: true, completion: nil)
+            }
+        }
     }
 
     private func displayImagePickerController() {
@@ -38,7 +48,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension MainScreenViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[.originalImage] as? UIImage {
             let path = info[.imageURL] as? URL
