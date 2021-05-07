@@ -62,8 +62,6 @@ class ShowAddedPicturesVC: UIViewController {
             }
         }
         animatedImagePaging()
-        showCommentToImage()
-        commentsTextField.text = nil
     }
 
     @IBAction private func onNextImageButton(_ sender: Any) {
@@ -75,8 +73,6 @@ class ShowAddedPicturesVC: UIViewController {
             }
         }
         animatedImagePaging()
-        showCommentToImage()
-        commentsTextField.text = nil
     }
 
     private func animatedImagePaging() {
@@ -91,6 +87,8 @@ class ShowAddedPicturesVC: UIViewController {
                     }
                 }
                 self.contentView.alpha = 1
+                self.showCommentToImage()
+                self.commentsTextField.text = nil
             }
         }
     }
