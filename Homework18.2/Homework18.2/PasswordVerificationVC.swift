@@ -18,6 +18,7 @@ class PasswordVerificationVC: UIViewController {
         super.viewDidLoad()
         backButton.layer.cornerRadius = 35
         goButton.layer.cornerRadius = 35
+        passwordTextField.delegate = self
     }
 
     @IBAction private func onGoButton(_ sender: Any) {
@@ -32,5 +33,12 @@ class PasswordVerificationVC: UIViewController {
 
     @IBAction private func onBackButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension PasswordVerificationVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

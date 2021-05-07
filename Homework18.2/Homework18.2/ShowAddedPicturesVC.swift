@@ -24,6 +24,7 @@ class ShowAddedPicturesVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        commentsTextField.delegate = self
         addCommentButton.layer.cornerRadius = 10
         backToMenuButton.layer.cornerRadius = 20
         previousImageButton.layer.cornerRadius = 20
@@ -104,5 +105,12 @@ class ShowAddedPicturesVC: UIViewController {
         if let nameOfImage = imagesNameArray?[indexOfImage] {
             commentsLabel.text = UserDefaults.standard.string(forKey: nameOfImage)
         }
+    }
+}
+
+extension ShowAddedPicturesVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
