@@ -34,7 +34,6 @@ class MainScreenViewController: UIViewController {
                 showAlertWithOneButton(title: "No images to show", message: "Add images", actionTitle: "OK", actionStyle: .default, handler: nil)
             } else {
                 let viewController = PasswordVerificationVC.instantiate()
-                viewController.modalPresentationStyle = .fullScreen
                 present(viewController, animated: true, completion: nil)
             }
         }

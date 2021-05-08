@@ -13,6 +13,7 @@ class ShowAddedPicturesVC: UIViewController {
     private var indexOfImage = 0
     private var commentsToImages: [String: String]?
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var commentsTextField: UITextField!
@@ -20,15 +21,24 @@ class ShowAddedPicturesVC: UIViewController {
     @IBOutlet weak var backToMenuButton: UIButton!
     @IBOutlet weak var previousImageButton: UIButton!
     @IBOutlet weak var nextImageButton: UIButton!
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var imageContentView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         commentsTextField.delegate = self
         addCommentButton.layer.cornerRadius = 10
-        backToMenuButton.layer.cornerRadius = 20
-        previousImageButton.layer.cornerRadius = 20
-        nextImageButton.layer.cornerRadius = 20
+        backToMenuButton.layer.cornerRadius = 10
+        commentsTextField.layer.borderWidth = 2
+        commentsTextField.layer.cornerRadius = 10
+        commentsLabel.layer.borderWidth = 2
+        commentsLabel.layer.cornerRadius = 10
+        imageView.layer.borderWidth = 2
+        imageView.layer.cornerRadius = 10
+        addCommentButton.layer.borderWidth = 2
+
         imagesFolderPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         guard let path = imagesFolderPath?.path else {
             return
@@ -75,9 +85,27 @@ class ShowAddedPicturesVC: UIViewController {
         animatedImagePaging()
     }
 
+    @objc func adjustForKeyboard(notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
+            return
+        }
+
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            scrollView.contentInset = .zero
+            scrollView.contentOffset = .zero
+        } else {
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
+        }
+
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
+    }
+
     private func animatedImagePaging() {
         UIView.animate(withDuration: 0.2) {
-            self.contentView.alpha = 0
+            self.imageContentView.alpha = 0
         } completion: { _ in
             UIView.animate(withDuration: 0.2) {
                 if let array = self.imagesNameArray {
@@ -86,7 +114,7 @@ class ShowAddedPicturesVC: UIViewController {
                         self.imageView.image = UIImage(contentsOfFile: filePath)
                     }
                 }
-                self.contentView.alpha = 1
+                self.imageContentView.alpha = 1
                 self.showCommentToImage()
                 self.commentsTextField.text = nil
             }
