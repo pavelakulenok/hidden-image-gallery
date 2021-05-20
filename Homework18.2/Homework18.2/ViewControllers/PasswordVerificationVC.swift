@@ -16,8 +16,8 @@ class PasswordVerificationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        backButton.layer.cornerRadius = 35
-        goButton.layer.cornerRadius = 35
+        backButton.applyCornerRadius(backButton.frame.width / 2)
+        goButton.applyCornerRadius(goButton.frame.width / 2)
         passwordTextField.delegate = self
     }
 

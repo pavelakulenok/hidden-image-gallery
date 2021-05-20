@@ -9,14 +9,15 @@ import UIKit
 
 class MainScreenViewController: UIViewController {
     private var imagesFolderPath: URL?
+    private var imagesNameArray: [String]?
 
     @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var showPhotosButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addPhotoButton.layer.cornerRadius = 10
-        showPhotosButton.layer.cornerRadius = 10
+        addPhotoButton.applyCornerRadius()
+        showPhotosButton.applyCornerRadius()
         imagesFolderPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     }
 
@@ -26,9 +27,15 @@ class MainScreenViewController: UIViewController {
 
     @IBAction private func onShowAddedPhotosButton(_ sender: Any) {
         guard let path = imagesFolderPath?.path else {
+            showAlertWithOneButton(title: "Error", message: "Can't find directory", actionTitle: "Ok", actionStyle: .default, handler: nil)
             return
         }
-        let imagesNameArray = try? FileManager.default.contentsOfDirectory(atPath: path)
+        do {
+            imagesNameArray = try FileManager.default.contentsOfDirectory(atPath: path)
+        } catch {
+            showAlertWithOneButton(title: "Error", message: "Can't read from directory", actionTitle: "Ok", actionStyle: .default, handler: nil)
+        }
+
         if let array = imagesNameArray {
             if array.isEmpty {
                 showAlertWithOneButton(title: "No images to show", message: "Add images", actionTitle: "OK", actionStyle: .default, handler: nil)

@@ -29,21 +29,26 @@ class ShowAddedPicturesVC: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         commentsTextField.delegate = self
-        addCommentButton.layer.cornerRadius = 10
-        backToMenuButton.layer.cornerRadius = 10
+        addCommentButton.applyCornerRadius()
+        backToMenuButton.applyCornerRadius()
         commentsTextField.layer.borderWidth = 2
-        commentsTextField.layer.cornerRadius = 10
+        commentsTextField.applyCornerRadius()
         commentsLabel.layer.borderWidth = 2
-        commentsLabel.layer.cornerRadius = 10
+        commentsLabel.applyCornerRadius()
         imageView.layer.borderWidth = 2
-        imageView.layer.cornerRadius = 10
+        imageView.applyCornerRadius()
         addCommentButton.layer.borderWidth = 2
 
         imagesFolderPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         guard let path = imagesFolderPath?.path else {
+            showAlertWithOneButton(title: "Error", message: "Can't find path to directory", actionTitle: "Ok", actionStyle: .default, handler: nil)
             return
         }
-        imagesNameArray = try? FileManager.default.contentsOfDirectory(atPath: path)
+        do {
+            imagesNameArray = try FileManager.default.contentsOfDirectory(atPath: path)
+        } catch {
+            showAlertWithOneButton(title: "Error", message: "Can't read from directory", actionTitle: "OK", actionStyle: .default, handler: nil)
+        }
         if let array = imagesNameArray {
             let fileName = array[indexOfImage]
             if let filePath = imagesFolderPath?.appendingPathComponent(fileName).path {

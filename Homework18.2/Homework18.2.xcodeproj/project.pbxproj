@@ -19,6 +19,7 @@
 		D45D319B263DEBDB00F7B08A /* PasswordVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45D319A263DEBDB00F7B08A /* PasswordVerificationVC.swift */; };
 		D45D319D263DEBF300F7B08A /* PasswordVerificationVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45D319C263DEBF300F7B08A /* PasswordVerificationVC.storyboard */; };
 		D45D319F263DF07600F7B08A /* UIViewController+UIAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45D319E263DF07600F7B08A /* UIViewController+UIAlertVC.swift */; };
+		D46B5DD72656B13B00E8C358 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B5DD62656B13B00E8C358 /* UIView+CornerRadius.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D45D319A263DEBDB00F7B08A /* PasswordVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVerificationVC.swift; sourceTree = "<group>"; };
 		D45D319C263DEBF300F7B08A /* PasswordVerificationVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordVerificationVC.storyboard; sourceTree = "<group>"; };
 		D45D319E263DF07600F7B08A /* UIViewController+UIAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIAlertVC.swift"; sourceTree = "<group>"; };
+		D46B5DD62656B13B00E8C358 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,21 +70,46 @@
 		D419D97A2635C4C200022FBA /* Homework18.2 */ = {
 			isa = PBXGroup;
 			children = (
+				D46B5DD52656B0AF00E8C358 /* Storyboards */,
+				D46B5DD42656B08F00E8C358 /* ViewControllers */,
+				D46B5DD22656B04D00E8C358 /* Extensions */,
 				D419D97B2635C4C200022FBA /* AppDelegate.swift */,
-				D45D3198263DEAB000F7B08A /* UIViewController+StoryboardInit.swift */,
-				D45D319E263DF07600F7B08A /* UIViewController+UIAlertVC.swift */,
 				D419D97D2635C4C200022FBA /* SceneDelegate.swift */,
-				D419D97F2635C4C200022FBA /* MainScreenViewController.swift */,
-				D45D3194263DE73500F7B08A /* ShowAddedPicturesVC.swift */,
-				D45D319A263DEBDB00F7B08A /* PasswordVerificationVC.swift */,
-				D45D319C263DEBF300F7B08A /* PasswordVerificationVC.storyboard */,
-				D419D9812635C4C200022FBA /* MainScreenViewController.storyboard */,
-				D45D3196263DE74900F7B08A /* ShowAddedPicturesVC.storyboard */,
 				D419D9842635C4C300022FBA /* Assets.xcassets */,
-				D419D9862635C4C300022FBA /* LaunchScreen.storyboard */,
 				D419D9892635C4C300022FBA /* Info.plist */,
 			);
 			path = Homework18.2;
+			sourceTree = "<group>";
+		};
+		D46B5DD22656B04D00E8C358 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D46B5DD62656B13B00E8C358 /* UIView+CornerRadius.swift */,
+				D45D3198263DEAB000F7B08A /* UIViewController+StoryboardInit.swift */,
+				D45D319E263DF07600F7B08A /* UIViewController+UIAlertVC.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D46B5DD42656B08F00E8C358 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D419D97F2635C4C200022FBA /* MainScreenViewController.swift */,
+				D45D3194263DE73500F7B08A /* ShowAddedPicturesVC.swift */,
+				D45D319A263DEBDB00F7B08A /* PasswordVerificationVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D46B5DD52656B0AF00E8C358 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D419D9862635C4C300022FBA /* LaunchScreen.storyboard */,
+				D45D319C263DEBF300F7B08A /* PasswordVerificationVC.storyboard */,
+				D419D9812635C4C200022FBA /* MainScreenViewController.storyboard */,
+				D45D3196263DE74900F7B08A /* ShowAddedPicturesVC.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D419D9802635C4C200022FBA /* MainScreenViewController.swift in Sources */,
+				D46B5DD72656B13B00E8C358 /* UIView+CornerRadius.swift in Sources */,
 				D419D97C2635C4C200022FBA /* AppDelegate.swift in Sources */,
 				D45D319B263DEBDB00F7B08A /* PasswordVerificationVC.swift in Sources */,
 				D45D319F263DF07600F7B08A /* UIViewController+UIAlertVC.swift in Sources */,
