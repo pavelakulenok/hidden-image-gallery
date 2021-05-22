@@ -33,11 +33,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReF-QJ-31J">
-                                <rect key="frame" x="147" y="323" width="120" height="50"/>
+                                <rect key="frame" x="150" y="323" width="114" height="50"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Cx4-aV-3jy"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="UwT-FU-uUA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Add Photo">
@@ -48,10 +47,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qlq-f9-Dop">
-                                <rect key="frame" x="107" y="423" width="200" height="50"/>
+                                <rect key="frame" x="100" y="423" width="214" height="50"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="R5y-uT-w75"/>
                                     <constraint firstAttribute="height" constant="50" id="pD1-4p-3rF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -66,9 +64,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ReF-QJ-31J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3bI-lx-JDl"/>
+                            <constraint firstItem="Qlq-f9-Dop" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="5Kd-k5-5SP"/>
                             <constraint firstItem="Qlq-f9-Dop" firstAttribute="top" secondItem="ReF-QJ-31J" secondAttribute="bottom" constant="50" id="Blx-k3-aGL"/>
-                            <constraint firstItem="Qlq-f9-Dop" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hwi-lV-iuZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ReF-QJ-31J" secondAttribute="trailing" constant="150" id="JfM-To-WYX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qlq-f9-Dop" secondAttribute="trailing" constant="100" id="LM4-5O-Xdx"/>
+                            <constraint firstItem="ReF-QJ-31J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="dkO-cZ-O4g"/>
                             <constraint firstItem="Qlq-f9-Dop" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="o0m-yw-tuA"/>
                         </constraints>
                     </view>
