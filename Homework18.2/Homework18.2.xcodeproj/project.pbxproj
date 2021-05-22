@@ -20,6 +20,10 @@
 		D45D319D263DEBF300F7B08A /* PasswordVerificationVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45D319C263DEBF300F7B08A /* PasswordVerificationVC.storyboard */; };
 		D45D319F263DF07600F7B08A /* UIViewController+UIAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45D319E263DF07600F7B08A /* UIViewController+UIAlertVC.swift */; };
 		D46B5DD72656B13B00E8C358 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B5DD62656B13B00E8C358 /* UIView+CornerRadius.swift */; };
+		D4AF2300265950000052995E /* UIView+BorderWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AF22FF265950000052995E /* UIView+BorderWidth.swift */; };
+		D4D2C50E2658508800DFA148 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2C50C2658508800DFA148 /* ImageCollectionViewCell.swift */; };
+		D4D2C50F2658508800DFA148 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D2C50D2658508800DFA148 /* ImageCollectionViewCell.xib */; };
+		D4D2C5132659260F00DFA148 /* ReadFromDirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2C5122659260E00DFA148 /* ReadFromDirectoryManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		D45D319C263DEBF300F7B08A /* PasswordVerificationVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordVerificationVC.storyboard; sourceTree = "<group>"; };
 		D45D319E263DF07600F7B08A /* UIViewController+UIAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIAlertVC.swift"; sourceTree = "<group>"; };
 		D46B5DD62656B13B00E8C358 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
+		D4AF22FF265950000052995E /* UIView+BorderWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BorderWidth.swift"; sourceTree = "<group>"; };
+		D4D2C50C2658508800DFA148 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		D4D2C50D2658508800DFA148 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		D4D2C5122659260E00DFA148 /* ReadFromDirectoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFromDirectoryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,8 @@
 		D419D97A2635C4C200022FBA /* Homework18.2 */ = {
 			isa = PBXGroup;
 			children = (
+				D4AF2301265950EE0052995E /* Managers */,
+				D4AF22FE2659387F0052995E /* Views */,
 				D46B5DD52656B0AF00E8C358 /* Storyboards */,
 				D46B5DD42656B08F00E8C358 /* ViewControllers */,
 				D46B5DD22656B04D00E8C358 /* Extensions */,
@@ -87,6 +97,7 @@
 				D46B5DD62656B13B00E8C358 /* UIView+CornerRadius.swift */,
 				D45D3198263DEAB000F7B08A /* UIViewController+StoryboardInit.swift */,
 				D45D319E263DF07600F7B08A /* UIViewController+UIAlertVC.swift */,
+				D4AF22FF265950000052995E /* UIView+BorderWidth.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -110,6 +121,23 @@
 				D45D3196263DE74900F7B08A /* ShowAddedPicturesVC.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D4AF22FE2659387F0052995E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4D2C50C2658508800DFA148 /* ImageCollectionViewCell.swift */,
+				D4D2C50D2658508800DFA148 /* ImageCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D4AF2301265950EE0052995E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D4D2C5122659260E00DFA148 /* ReadFromDirectoryManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +202,7 @@
 				D419D9882635C4C300022FBA /* LaunchScreen.storyboard in Resources */,
 				D419D9852635C4C300022FBA /* Assets.xcassets in Resources */,
 				D45D319D263DEBF300F7B08A /* PasswordVerificationVC.storyboard in Resources */,
+				D4D2C50F2658508800DFA148 /* ImageCollectionViewCell.xib in Resources */,
 				D419D9832635C4C200022FBA /* MainScreenViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,7 +239,10 @@
 				D419D97C2635C4C200022FBA /* AppDelegate.swift in Sources */,
 				D45D319B263DEBDB00F7B08A /* PasswordVerificationVC.swift in Sources */,
 				D45D319F263DF07600F7B08A /* UIViewController+UIAlertVC.swift in Sources */,
+				D4AF2300265950000052995E /* UIView+BorderWidth.swift in Sources */,
+				D4D2C5132659260F00DFA148 /* ReadFromDirectoryManager.swift in Sources */,
 				D419D97E2635C4C200022FBA /* SceneDelegate.swift in Sources */,
+				D4D2C50E2658508800DFA148 /* ImageCollectionViewCell.swift in Sources */,
 				D45D3195263DE73500F7B08A /* ShowAddedPicturesVC.swift in Sources */,
 				D45D3199263DEAB000F7B08A /* UIViewController+StoryboardInit.swift in Sources */,
 			);

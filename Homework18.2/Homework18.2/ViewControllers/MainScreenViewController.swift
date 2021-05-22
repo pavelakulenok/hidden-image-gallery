@@ -8,8 +8,7 @@
 import UIKit
 
 class MainScreenViewController: UIViewController {
-    private var imagesFolderPath: URL?
-    private var imagesNameArray: [String]?
+    private var imagesFolderURL: URL?
 
     @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var showPhotosButton: UIButton!
@@ -18,7 +17,7 @@ class MainScreenViewController: UIViewController {
         super.viewDidLoad()
         addPhotoButton.applyCornerRadius()
         showPhotosButton.applyCornerRadius()
-        imagesFolderPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        imagesFolderURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     }
 
     @IBAction private func onAddPhotoButton(_ sender: Any) {
@@ -26,23 +25,11 @@ class MainScreenViewController: UIViewController {
     }
 
     @IBAction private func onShowAddedPhotosButton(_ sender: Any) {
-        guard let path = imagesFolderPath?.path else {
-            showAlertWithOneButton(title: "Error", message: "Can't find directory", actionTitle: "Ok", actionStyle: .default, handler: nil)
-            return
-        }
-        do {
-            imagesNameArray = try FileManager.default.contentsOfDirectory(atPath: path)
-        } catch {
-            showAlertWithOneButton(title: "Error", message: "Can't read from directory", actionTitle: "Ok", actionStyle: .default, handler: nil)
-        }
-
-        if let array = imagesNameArray {
-            if array.isEmpty {
-                showAlertWithOneButton(title: "No images to show", message: "Add images", actionTitle: "OK", actionStyle: .default, handler: nil)
-            } else {
-                let viewController = PasswordVerificationVC.instantiate()
-                present(viewController, animated: true, completion: nil)
-            }
+        if ReadFromDirectoryManager.getImagesNameArray().isEmpty {
+            showAlertWithOneButton(title: "No images to show", message: "Add images", actionTitle: "OK", actionStyle: .default, handler: nil)
+        } else {
+            let viewController = PasswordVerificationVC.instantiate()
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
 
@@ -62,7 +49,7 @@ extension MainScreenViewController: UIImagePickerControllerDelegate, UINavigatio
                 return
             }
             let imageData = image.jpegData(compressionQuality: 0.5)
-            let imagePath = imagesFolderPath?.appendingPathComponent(name)
+            let imagePath = imagesFolderURL?.appendingPathComponent(name)
             if let path = imagePath {
                 FileManager.default.createFile(atPath: path.path, contents: imageData, attributes: nil)
             }
