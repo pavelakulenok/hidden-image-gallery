@@ -17,8 +17,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
         if let commentString = commentTextField.text {
             if !commentString.isEmpty {
                 commentLabel.text = commentString
-                let arr = ReadFromDirectoryManager.getImagesNameArray()
-                UserDefaults.standard.setValue(commentString, forKey: arr[sender.tag])
+                let imagesArray = ReadFromDirectoryManager.getImagesNameArray()
+                UserDefaults.standard.setValue(commentString, forKey: imagesArray[sender.tag])
             }
         }
     }

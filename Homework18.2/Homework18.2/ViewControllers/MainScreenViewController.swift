@@ -46,6 +46,7 @@ extension MainScreenViewController: UIImagePickerControllerDelegate, UINavigatio
         if let image = info[.originalImage] as? UIImage {
             let path = info[.imageURL] as? URL
             guard let name = path?.lastPathComponent else {
+                assertionFailure("can't get name of image from image path")
                 return
             }
             let imageData = image.jpegData(compressionQuality: 0.5)

@@ -30,9 +30,6 @@ class ShowAddedPicturesVC: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
 
-    @objc func onAddCommentButton(sender: UIButton) {
-    }
-
     @objc func adjustForKeyboard(notification: Notification) {
         guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
             return
@@ -84,7 +81,6 @@ extension ShowAddedPicturesVC: UICollectionViewDelegate, UICollectionViewDataSou
         cell.applyCornerRadius()
         cell.borderWidth(3)
         cell.addCommentButton.tag = indexPath.item
-        cell.addCommentButton.addTarget(self, action: #selector(onAddCommentButton), for: .touchUpInside)
         cell.commentTextField.text = nil
         return cell
     }
