@@ -78,8 +78,6 @@ extension ShowAddedPicturesVC: UICollectionViewDelegate, UICollectionViewDataSou
         cell.imageView.image = UIImage(contentsOfFile: filePath)
         cell.commentLabel.text = UserDefaults.standard.string(forKey: fileName)
         cell.commentTextField.delegate = self
-        cell.applyCornerRadius()
-        cell.borderWidth(3)
         cell.addCommentButton.tag = indexPath.item
         cell.commentTextField.text = nil
         return cell

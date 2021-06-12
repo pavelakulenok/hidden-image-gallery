@@ -8,16 +8,12 @@
 import UIKit
 
 class MainScreenViewController: UIViewController {
-    private var imagesFolderURL: URL?
-
     @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var showPhotosButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addPhotoButton.applyCornerRadius()
-        showPhotosButton.applyCornerRadius()
-        imagesFolderURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        setupUI()
     }
 
     @IBAction private func onAddPhotoButton(_ sender: Any) {
@@ -31,6 +27,11 @@ class MainScreenViewController: UIViewController {
             let viewController = PasswordVerificationVC.instantiate()
             navigationController?.pushViewController(viewController, animated: true)
         }
+    }
+
+    private func setupUI() {
+        addPhotoButton.applyCornerRadius()
+        showPhotosButton.applyCornerRadius()
     }
 
     private func displayImagePickerController() {
@@ -50,6 +51,7 @@ extension MainScreenViewController: UIImagePickerControllerDelegate, UINavigatio
                 return
             }
             let imageData = image.jpegData(compressionQuality: 0.5)
+            let imagesFolderURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
             let imagePath = imagesFolderURL?.appendingPathComponent(name)
             if let path = imagePath {
                 FileManager.default.createFile(atPath: path.path, contents: imageData, attributes: nil)

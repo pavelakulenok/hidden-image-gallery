@@ -25,6 +25,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        contentView.applyCornerRadius()
+        contentView.borderWidth(3)
         commentLabel.borderWidth(2)
         commentTextField.borderWidth(2)
         addCommentButton.borderWidth(2)

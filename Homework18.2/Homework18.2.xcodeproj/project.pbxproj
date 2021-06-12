@@ -78,17 +78,33 @@
 		D419D97A2635C4C200022FBA /* Homework18.2 */ = {
 			isa = PBXGroup;
 			children = (
+				D45D67822674C6350092ADC6 /* Resources */,
+				D45D67812674C5DE0092ADC6 /* Supporting files */,
 				D4AF2301265950EE0052995E /* Managers */,
 				D4AF22FE2659387F0052995E /* Views */,
 				D46B5DD52656B0AF00E8C358 /* Storyboards */,
 				D46B5DD42656B08F00E8C358 /* ViewControllers */,
 				D46B5DD22656B04D00E8C358 /* Extensions */,
-				D419D97B2635C4C200022FBA /* AppDelegate.swift */,
-				D419D97D2635C4C200022FBA /* SceneDelegate.swift */,
-				D419D9842635C4C300022FBA /* Assets.xcassets */,
 				D419D9892635C4C300022FBA /* Info.plist */,
 			);
 			path = Homework18.2;
+			sourceTree = "<group>";
+		};
+		D45D67812674C5DE0092ADC6 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				D419D97B2635C4C200022FBA /* AppDelegate.swift */,
+				D419D97D2635C4C200022FBA /* SceneDelegate.swift */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		D45D67822674C6350092ADC6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D419D9842635C4C300022FBA /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D46B5DD22656B04D00E8C358 /* Extensions */ = {
