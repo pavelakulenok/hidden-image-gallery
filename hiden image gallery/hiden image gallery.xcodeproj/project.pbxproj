@@ -27,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D419D9782635C4C200022FBA /* Homework18.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework18.2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D419D9782635C4C200022FBA /* hiden image gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hiden image gallery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D419D97B2635C4C200022FBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D419D97D2635C4C200022FBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D419D97F2635C4C200022FBA /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		D419D96F2635C4C200022FBA = {
 			isa = PBXGroup;
 			children = (
-				D419D97A2635C4C200022FBA /* Homework18.2 */,
+				D419D97A2635C4C200022FBA /* hiden image gallery */,
 				D419D9792635C4C200022FBA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,12 +70,12 @@
 		D419D9792635C4C200022FBA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D419D9782635C4C200022FBA /* Homework18.2.app */,
+				D419D9782635C4C200022FBA /* hiden image gallery.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D419D97A2635C4C200022FBA /* Homework18.2 */ = {
+		D419D97A2635C4C200022FBA /* hiden image gallery */ = {
 			isa = PBXGroup;
 			children = (
 				D45D67822674C6350092ADC6 /* Resources */,
@@ -87,7 +87,7 @@
 				D46B5DD22656B04D00E8C358 /* Extensions */,
 				D419D9892635C4C300022FBA /* Info.plist */,
 			);
-			path = Homework18.2;
+			path = "hiden image gallery";
 			sourceTree = "<group>";
 		};
 		D45D67812674C5DE0092ADC6 /* Supporting files */ = {
@@ -159,9 +159,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D419D9772635C4C200022FBA /* Homework18.2 */ = {
+		D419D9772635C4C200022FBA /* hiden image gallery */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D419D98C2635C4C300022FBA /* Build configuration list for PBXNativeTarget "Homework18.2" */;
+			buildConfigurationList = D419D98C2635C4C300022FBA /* Build configuration list for PBXNativeTarget "hiden image gallery" */;
 			buildPhases = (
 				D419D9742635C4C200022FBA /* Sources */,
 				D419D9752635C4C200022FBA /* Frameworks */,
@@ -172,9 +172,9 @@
 			);
 			dependencies = (
 			);
-			name = Homework18.2;
+			name = "hiden image gallery";
 			productName = "lesson 18";
-			productReference = D419D9782635C4C200022FBA /* Homework18.2.app */;
+			productReference = D419D9782635C4C200022FBA /* hiden image gallery.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -191,7 +191,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D419D9732635C4C200022FBA /* Build configuration list for PBXProject "Homework18.2" */;
+			buildConfigurationList = D419D9732635C4C200022FBA /* Build configuration list for PBXProject "hiden image gallery" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -204,7 +204,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D419D9772635C4C200022FBA /* Homework18.2 */,
+				D419D9772635C4C200022FBA /* hiden image gallery */,
 			);
 		};
 /* End PBXProject section */
@@ -409,12 +409,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U8UWB3WQCD;
-				INFOPLIST_FILE = "$(SRCROOT)/Homework18.2/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/hiden image gallery/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = by.paulshark.Homework18.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "by.paulshark.hiden-image-gallery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -428,7 +428,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U8UWB3WQCD;
-				INFOPLIST_FILE = "$(SRCROOT)/Homework18.2/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/hiden image gallery/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -443,7 +443,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D419D9732635C4C200022FBA /* Build configuration list for PBXProject "Homework18.2" */ = {
+		D419D9732635C4C200022FBA /* Build configuration list for PBXProject "hiden image gallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D419D98A2635C4C300022FBA /* Debug */,
@@ -452,7 +452,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D419D98C2635C4C300022FBA /* Build configuration list for PBXNativeTarget "Homework18.2" */ = {
+		D419D98C2635C4C300022FBA /* Build configuration list for PBXNativeTarget "hiden image gallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D419D98D2635C4C300022FBA /* Debug */,
