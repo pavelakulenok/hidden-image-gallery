@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Pn-9s-A9m">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -8,6 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="90f-jR-vC5">
+            <objects>
+                <navigationController id="9Pn-9s-A9m" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n64-Ed-T53">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QNJ-dR-3Y5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GbY-RX-ZiH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-601" y="-62"/>
+        </scene>
         <!--Main Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -17,10 +33,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReF-QJ-31J">
-                                <rect key="frame" x="150" y="323" width="114" height="50"/>
+                                <rect key="frame" x="147" y="323" width="120" height="50"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Cx4-aV-3jy"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="YMe-kF-ASk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Add Photo">
@@ -31,9 +48,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qlq-f9-Dop">
-                                <rect key="frame" x="100" y="423" width="214" height="50"/>
+                                <rect key="frame" x="107" y="423" width="200" height="50"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="lyR-s4-OG8"/>
                                     <constraint firstAttribute="height" constant="50" id="pD1-4p-3rF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -48,14 +66,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Qlq-f9-Dop" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="5Kd-k5-5SP"/>
                             <constraint firstItem="Qlq-f9-Dop" firstAttribute="top" secondItem="ReF-QJ-31J" secondAttribute="bottom" constant="50" id="Blx-k3-aGL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ReF-QJ-31J" secondAttribute="trailing" constant="150" id="JfM-To-WYX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qlq-f9-Dop" secondAttribute="trailing" constant="100" id="LM4-5O-Xdx"/>
-                            <constraint firstItem="ReF-QJ-31J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="dkO-cZ-O4g"/>
+                            <constraint firstItem="ReF-QJ-31J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DrX-JJ-jOO"/>
+                            <constraint firstItem="Qlq-f9-Dop" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XJW-4A-cj1"/>
                             <constraint firstItem="Qlq-f9-Dop" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="o0m-yw-tuA"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gCM-3z-Cc6"/>
                     <connections>
                         <outlet property="addPhotoButton" destination="ReF-QJ-31J" id="mgh-AO-VrB"/>
                         <outlet property="showPhotosButton" destination="Qlq-f9-Dop" id="ogM-Gd-20b"/>

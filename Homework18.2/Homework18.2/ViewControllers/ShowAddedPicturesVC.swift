@@ -8,134 +8,40 @@
 import UIKit
 
 class ShowAddedPicturesVC: UIViewController {
-    private var imagesNameArray: [String]?
-    private var imagesFolderPath: URL?
-    private var indexOfImage = 0
-    private var commentsToImages: [String: String]?
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var commentsLabel: UILabel!
-    @IBOutlet weak var commentsTextField: UITextField!
-    @IBOutlet weak var addCommentButton: UIButton!
-    @IBOutlet weak var backToMenuButton: UIButton!
-    @IBOutlet weak var previousImageButton: UIButton!
-    @IBOutlet weak var nextImageButton: UIButton!
-    @IBOutlet weak var imageContentView: UIView!
+    private let insetSize: CGFloat = 10
+    @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(onMenuButton))
+
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        commentsTextField.delegate = self
-        addCommentButton.applyCornerRadius()
-        backToMenuButton.applyCornerRadius()
-        commentsTextField.layer.borderWidth = 2
-        commentsTextField.applyCornerRadius()
-        commentsLabel.layer.borderWidth = 2
-        commentsLabel.applyCornerRadius()
-        imageView.layer.borderWidth = 2
-        imageView.applyCornerRadius()
-        addCommentButton.layer.borderWidth = 2
 
-        imagesFolderPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-        guard let path = imagesFolderPath?.path else {
-            showAlertWithOneButton(title: "Error", message: "Can't find path to directory", actionTitle: "Ok", actionStyle: .default, handler: nil)
-            return
-        }
-        do {
-            imagesNameArray = try FileManager.default.contentsOfDirectory(atPath: path)
-        } catch {
-            showAlertWithOneButton(title: "Error", message: "Can't read from directory", actionTitle: "OK", actionStyle: .default, handler: nil)
-        }
-        if let array = imagesNameArray {
-            let fileName = array[indexOfImage]
-            if let filePath = imagesFolderPath?.appendingPathComponent(fileName).path {
-                imageView.image = UIImage(contentsOfFile: filePath)
-            }
-        }
-        showCommentToImage()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: Bundle.main
+        ), forCellWithReuseIdentifier: "cell")
+        collectionView.showsVerticalScrollIndicator = false
     }
 
-    @IBAction private func onAddCommentButton(_ sender: Any) {
-        commentsLabel.text = commentsTextField.text
-        setCommentToImage()
-    }
-
-    @IBAction private func onBackToMenuButton(_ sender: Any) {
-        let viewController = MainScreenViewController.instantiate()
-        present(viewController, animated: true, completion: nil)
-    }
-
-    @IBAction private func onPreviousImageButton(_ sender: Any) {
-        if let array = imagesNameArray {
-            if indexOfImage < array.count - 1 {
-                indexOfImage += 1
-            } else {
-                indexOfImage = 0
-            }
-        }
-        animatedImagePaging()
-    }
-
-    @IBAction private func onNextImageButton(_ sender: Any) {
-        if let array = imagesNameArray {
-            if indexOfImage > 0 {
-                indexOfImage -= 1
-            } else {
-                indexOfImage = array.count - 1
-            }
-        }
-        animatedImagePaging()
+    @objc func onMenuButton() {
+        navigationController?.popToRootViewController(animated: true)
     }
 
     @objc func adjustForKeyboard(notification: Notification) {
         guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
             return
         }
-
         let keyboardScreenEndFrame = keyboardValue.cgRectValue
         let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-
         if notification.name == UIResponder.keyboardWillHideNotification {
-            scrollView.contentInset = .zero
-            scrollView.contentOffset = .zero
+            collectionView.contentInset = .zero
         } else {
-            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
+            collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
         }
-
-        scrollView.scrollIndicatorInsets = scrollView.contentInset
-    }
-
-    private func animatedImagePaging() {
-        UIView.animate(withDuration: 0.2) {
-            self.imageContentView.alpha = 0
-        } completion: { _ in
-            UIView.animate(withDuration: 0.2) {
-                if let array = self.imagesNameArray {
-                    let fileName = array[self.indexOfImage]
-                    if let filePath = self.imagesFolderPath?.appendingPathComponent(fileName).path {
-                        self.imageView.image = UIImage(contentsOfFile: filePath)
-                    }
-                }
-                self.imageContentView.alpha = 1
-                self.showCommentToImage()
-                self.commentsTextField.text = nil
-            }
-        }
-    }
-
-    private func setCommentToImage() {
-        if let nameOfImage = imagesNameArray?[indexOfImage] {
-            UserDefaults.standard.setValue(commentsLabel.text, forKey: nameOfImage)
-        }
-    }
-
-    private func showCommentToImage() {
-        if let nameOfImage = imagesNameArray?[indexOfImage] {
-            commentsLabel.text = UserDefaults.standard.string(forKey: nameOfImage)
-        }
+        collectionView.scrollIndicatorInsets = collectionView.contentInset
     }
 }
 
@@ -143,5 +49,37 @@ extension ShowAddedPicturesVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension ShowAddedPicturesVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height - 2 * insetSize)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return ReadFromDirectoryManager.getImagesNameArray().count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: insetSize, left: 0, bottom: insetSize, right: 0)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return insetSize
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ImageCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        let fileName = ReadFromDirectoryManager.getImagesNameArray()[indexPath.item]
+        let filePath = ReadFromDirectoryManager.getImagePath(item: indexPath.item)
+        cell.imageView.image = UIImage(contentsOfFile: filePath)
+        cell.commentLabel.text = UserDefaults.standard.string(forKey: fileName)
+        cell.commentTextField.delegate = self
+        cell.addCommentButton.tag = indexPath.item
+        cell.commentTextField.text = nil
+        return cell
     }
 }
