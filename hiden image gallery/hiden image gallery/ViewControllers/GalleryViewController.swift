@@ -73,7 +73,7 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = ImageViewController.instantiate()
+        let viewController = ImageViewController()
         let filePath = ReadFromDirectoryManager.getImagePath(item: indexPath.item)
         viewController.filePath = filePath
         navigationController?.pushViewController(viewController, animated: true)

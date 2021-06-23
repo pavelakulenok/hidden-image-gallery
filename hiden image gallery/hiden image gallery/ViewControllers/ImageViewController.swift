@@ -17,14 +17,22 @@ class ImageViewController: UIViewController {
     let commentTextField = UITextField()
     let addCommentButton = UIButton()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func loadView() {
+        let view = UIView(frame: UIScreen.main.bounds)
+        view.backgroundColor = .systemBackground
+        self.view = view
         view.addSubview(scrollView)
         scrollView.addSubview(commentLabel)
         scrollView.addSubview(imageScrollView)
         imageScrollView.addSubview(imageView)
         scrollView.addSubview(commentTextField)
         scrollView.addSubview(addCommentButton)
+        setupUI()
+        configureNavBar()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
         imageScrollView.delegate = self
         commentTextField.delegate = self
         imageScrollView.maximumZoomScale = 3
@@ -33,9 +41,6 @@ class ImageViewController: UIViewController {
         commentTextField.textAlignment = .center
         commentTextField.autocorrectionType = .no
         commentLabel.textAlignment = .center
-
-        setupUI()
-        configureNavBar()
 
         if let path = filePath {
             imageView.image = UIImage(contentsOfFile: path)
@@ -113,13 +118,16 @@ class ImageViewController: UIViewController {
         commentLabel.applyCornerRadius(10)
         commentTextField.applyCornerRadius(10)
         commentLabel.addBorderWidth(1)
+        commentLabel.backgroundColor = .secondarySystemBackground
         commentTextField.addBorderWidth(1)
+        commentTextField.backgroundColor = .secondarySystemBackground
         commentLabel.font = UIFont(name: "Verdana", size: 17)
         commentTextField.font = UIFont(name: "Verdana", size: 17)
         addCommentButton.setTitle("Comment", for: .normal)
-        addCommentButton.setTitleColor(.black, for: .normal)
+        addCommentButton.setTitleColor(.label, for: .normal)
         addCommentButton.titleLabel?.font = UIFont(name: "Verdana Bold", size: 17)
         addCommentButton.addBorderWidth(1)
+        addCommentButton.backgroundColor = .secondarySystemBackground
         addCommentButton.applyCornerRadius(10)
     }
 }
