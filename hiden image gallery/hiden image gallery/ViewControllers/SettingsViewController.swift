@@ -5,6 +5,7 @@
 //  Created by Pavel Akulenak on 25.04.21.
 //
 
+import KeychainAccess
 import UIKit
 
 class SettingsViewController: UIViewController {
@@ -49,6 +50,23 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction private func onChangePasswordButton(_ sender: Any) {
+        if let oldPassword = oldPasswordTextField.text, let newPassword = newPasswordTextField.text, let confirmPassword = confirmPasswordTextField.text {
+            let keychain = Keychain()
+            if oldPassword != keychain["hidenImageGalleryPassword"] {
+                showAlertWithOneButton(title: "Wrong password", message: "please try again", actionTitle: "Ok", actionStyle: .default, handler: nil)
+            } else if newPassword.isEmpty {
+                showAlertWithOneButton(title: "New password field is empty", message: "enter your password", actionTitle: "Ok", actionStyle: .default, handler: nil)
+            } else if confirmPassword.isEmpty {
+                showAlertWithOneButton(title: "Confirm password field is empty", message: "enter your password", actionTitle: "Ok", actionStyle: .default, handler: nil)
+            } else if newPassword != confirmPassword {
+                showAlertWithOneButton(title: "passwords is not equal", message: "please try again", actionTitle: "Ok", actionStyle: .default, handler: nil)
+            } else {
+                keychain["hidenImageGalleryPassword"] = nil
+                keychain["hidenImageGalleryPassword"] = newPassword
+                let viewController = GalleryViewController.instantiate()
+                navigationController?.pushViewController(viewController, animated: true)
+            }
+        }
     }
 
     @objc private func onLogOutButton() {

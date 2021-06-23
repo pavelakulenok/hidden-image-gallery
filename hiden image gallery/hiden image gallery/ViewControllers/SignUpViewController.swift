@@ -5,6 +5,7 @@
 //  Created by Pavel Akulenak on 1.05.21.
 //
 
+import KeychainAccess
 import UIKit
 
 class SignUpViewController: UIViewController {
@@ -53,6 +54,8 @@ class SignUpViewController: UIViewController {
                     UserDefaults.standard.setValue(true, forKey: "onAutoLogin")
                 }
                 UserDefaults.standard.setValue(true, forKey: "isNotFirstLaunch")
+                let keychain = Keychain()
+                keychain["hidenImageGalleryPassword"] = password
             }
         }
     }

@@ -5,10 +5,10 @@
 //  Created by Pavel Akulenak on 16.06.21.
 //
 
+import KeychainAccess
 import UIKit
 
 class LogInViewController: UIViewController {
-    let userPassword = "123"
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -28,7 +28,8 @@ class LogInViewController: UIViewController {
 
     @IBAction private func onLoginButton(_ sender: Any) {
         if let password = passwordTextField.text {
-            if password == userPassword {
+            let keychain = Keychain()
+            if password == keychain["hidenImageGalleryPassword"] {
                 UserDefaults.standard.setValue(true, forKey: "userLoggedIn")
                 let viewController = GalleryViewController.instantiate()
                 navigationController?.pushViewController(viewController, animated: true)
