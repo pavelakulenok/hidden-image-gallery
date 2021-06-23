@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3F8DE13BB44EFD7AA814983 /* Pods_hiden_image_gallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F317E7AE26DF456D4F7FC997 /* Pods_hiden_image_gallery.framework */; };
 		D419D97C2635C4C200022FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D419D97B2635C4C200022FBA /* AppDelegate.swift */; };
 		D419D97E2635C4C200022FBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D419D97D2635C4C200022FBA /* SceneDelegate.swift */; };
 		D419D9802635C4C200022FBA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D419D97F2635C4C200022FBA /* SettingsViewController.swift */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3AA9119BC183053425999AD1 /* Pods-hiden image gallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hiden image gallery.release.xcconfig"; path = "Target Support Files/Pods-hiden image gallery/Pods-hiden image gallery.release.xcconfig"; sourceTree = "<group>"; };
+		3E47193141826796C9ECED42 /* Pods-hiden image gallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hiden image gallery.debug.xcconfig"; path = "Target Support Files/Pods-hiden image gallery/Pods-hiden image gallery.debug.xcconfig"; sourceTree = "<group>"; };
 		D419D9782635C4C200022FBA /* hiden image gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hiden image gallery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D419D97B2635C4C200022FBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D419D97D2635C4C200022FBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 		D45D319E263DF07600F7B08A /* UIViewController+UIAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIAlertVC.swift"; sourceTree = "<group>"; };
 		D46B5DD62656B13B00E8C358 /* UIView+UIUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+UIUtilities.swift"; sourceTree = "<group>"; };
 		D4D2C5122659260E00DFA148 /* ReadFromDirectoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFromDirectoryManager.swift; sourceTree = "<group>"; };
+		F317E7AE26DF456D4F7FC997 /* Pods_hiden_image_gallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hiden_image_gallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +61,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F8DE13BB44EFD7AA814983 /* Pods_hiden_image_gallery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0CA51BB8CD0C37238C06715 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F317E7AE26DF456D4F7FC997 /* Pods_hiden_image_gallery.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D419D96F2635C4C200022FBA = {
 			isa = PBXGroup;
 			children = (
 				D419D97A2635C4C200022FBA /* hiden image gallery */,
 				D419D9792635C4C200022FBA /* Products */,
+				E8010D715F1FFB0E3D87AAE5 /* Pods */,
+				A0CA51BB8CD0C37238C06715 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +177,16 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		E8010D715F1FFB0E3D87AAE5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E47193141826796C9ECED42 /* Pods-hiden image gallery.debug.xcconfig */,
+				3AA9119BC183053425999AD1 /* Pods-hiden image gallery.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,10 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D419D98C2635C4C300022FBA /* Build configuration list for PBXNativeTarget "hiden image gallery" */;
 			buildPhases = (
+				11B3B32554BD05BF5CAD96D2 /* [CP] Check Pods Manifest.lock */,
 				D419D9742635C4C200022FBA /* Sources */,
 				D419D9752635C4C200022FBA /* Frameworks */,
 				D419D9762635C4C200022FBA /* Resources */,
 				D419D9962636ADAB00022FBA /* ShellScript */,
+				C405E9D7F9A750C36CA589EA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +260,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		11B3B32554BD05BF5CAD96D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hiden image gallery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C405E9D7F9A750C36CA589EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hiden image gallery/Pods-hiden image gallery-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hiden image gallery/Pods-hiden image gallery-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hiden image gallery/Pods-hiden image gallery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D419D9962636ADAB00022FBA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -412,6 +478,7 @@
 		};
 		D419D98D2635C4C300022FBA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E47193141826796C9ECED42 /* Pods-hiden image gallery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -431,6 +498,7 @@
 		};
 		D419D98E2635C4C300022FBA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AA9119BC183053425999AD1 /* Pods-hiden image gallery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
