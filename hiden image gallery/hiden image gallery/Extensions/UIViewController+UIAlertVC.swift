@@ -14,4 +14,13 @@ extension UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
+
+    func showAlertWithTwoButtons(title: String, message: String, firstActionTitle: String, firstActionStyle: UIAlertAction.Style, firstHandler: ((UIAlertAction) -> Void)?, secondActionTitle: String, secondActionStyle: UIAlertAction.Style, secondHandler: ((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let firstAction = UIAlertAction(title: firstActionTitle, style: firstActionStyle, handler: firstHandler)
+        let secondAction = UIAlertAction(title: secondActionTitle, style: secondActionStyle, handler: secondHandler)
+        alert.addAction(firstAction)
+        alert.addAction(secondAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
